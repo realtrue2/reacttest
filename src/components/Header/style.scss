@@ -1,0 +1,87 @@
+@import "../../scss/utils/mixins";
+@import "../../scss/utils/vars";
+
+header {
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  transition: all 250ms ease-out 0ms;
+  opacity: 1;
+  &.fixed {
+    position: fixed;
+  }
+  &:before {
+
+  }
+
+}
+.headerline {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 0;
+  font-size: 18px;
+  text-align: center;
+
+  .logo {
+    letter-spacing: 0.05em;
+    line-height: 2.66em;
+    text-align: left;
+    font-size: rem(18);
+    font-weight: 800;
+    color: $default-color;
+    padding: 24.5px 0;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+
+          background-image: url("../../img/phoenix.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          color: $mainFontColor;
+
+
+
+    }
+  }
+
+  .menu {
+    color: $default-color;
+    line-height: 2.66em;
+    font-weight: 600;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+
+    li {
+      list-style: none;
+      min-height: 75px;
+      min-width: 70px;
+      display: block;
+
+      a {
+        color: $default-color;
+        min-width: 110px;
+        padding: 19px 0;
+        line-height: 2.66em;
+        font-size: 14px;
+        font-weight: 800;
+        display: block;
+        text-align: center;
+        transition: 0.3s;
+
+
+        &:hover {
+            background-image: url("../../img/phoenix.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            color: $mainFontColor;
+
+        }
+      }
+    }
+  }
+
+}

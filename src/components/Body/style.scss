@@ -1,0 +1,172 @@
+@import "../../scss/utils/mixins";
+@import "../../scss/utils/vars";
+
+section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  transform-style: inherit;
+  padding: 40px 0 80px 0;
+
+  & .wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  & h1 {
+    width: 30%;
+    text-align: left;
+    font-size: 35px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  & .text {
+    width: 60%;
+    position: relative;
+
+
+    & .short-text {
+      width: 100%;
+      max-height: calc(100vh - 145px);
+      overflow: hidden;
+      transition: 0.5s;
+
+      & p {
+        font-size: $mainFontSize;
+        color: $mainFontColor;
+        margin-bottom: 15px;
+        line-height: 1.7;
+
+      }
+      &.open {
+        max-height: 15000px;
+      }
+
+    }
+
+    & .open-button {
+      width: 100%;
+      position: relative;
+      bottom: -22px;
+      display: flex;
+      justify-content: center;
+      color: $mainFontColor;
+      cursor: pointer;
+      transition: 0.5s;
+
+      &:after {
+        position: absolute;
+        top: 26px;
+        content: '';
+        width: 23px;
+        height: 30px;
+        background: url("../../img/dragonarrow.svg");
+        transition: 0.5s;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &.open {
+        &:after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+  }
+
+  &.section1{
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: block;
+      background: url("../../img/main.jpg") top center;
+      background-size: cover;
+      transform: translateZ(-.5px) scale(1.6);
+      z-index: -1;
+    }
+
+    .arrow-7 {
+      position: absolute;
+      bottom: 100px;
+      left: calc(50% + 26px);
+    }
+    .arrow-7 span {
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-bottom: 5px solid #fafafa;
+      border-right: 5px solid #fafafa;
+      transform: rotate(45deg);
+      margin: -16px;
+      animation: arrow-7 2s infinite;
+    }
+    .arrow-7 span:nth-child(2){
+      animation-delay: -0.2s;
+    }
+    .arrow-7 span:nth-child(3){
+      animation-delay: -0.4s;
+    }
+    @keyframes arrow-7 {
+      0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px,-20px);
+      }
+      50%{
+        opacity: 1;
+      }
+      100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(20px,20px);
+      }
+    }
+  }
+  &.section2 {
+    background: #fafafa;
+    box-shadow: 0 0 20px #333;
+    z-index: 1;
+    transition: 0.5s;
+
+    &.open {
+      height: fit-content;
+      &:after {
+        content: '';
+        display: none;
+      }
+    }
+
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 80px;
+      left: 0;
+      height: 200px;
+      width: 100%;
+      background: -webkit-linear-gradient(#fafafa, #fafafa);
+      background: linear-gradient(rgba(0,0,0,0), #fafafa);
+    }
+
+  }
+
+  &.section3 {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: block;
+      background: url("../../img/dragon.jpg") top center;
+      background-size: cover;
+      transform: translateZ(-.5px) scale(1.6);
+      z-index: -1;
+    }
+  }
+}
